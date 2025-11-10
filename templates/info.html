@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Informații despre server</title>
+</head>
+<body>
+    <h1>Bine ai venit la magazinul de bijuterii!</h1>
+    <h2>Data și ora curentă</h2>
+    <p>{{ data_curenta }}</p>
+
+    <hr>
+
+    <h2>Informații despre accesare</h2>
+    {% if acces %}
+        <p><strong>ID acces:</strong> {{ acces.id }}</p>
+        <p><strong>IP client:</strong> {{ acces.ip_client }}</p>
+        <p><strong>URL complet:</strong> {{ acces.url_complet }}</p>
+        <p><strong>Pagina accesată:</strong> {{ acces.pagina }}</p>
+        <p><strong>Data accesării:</strong> {{ data_formatata }}</p>
+
+        <h3>Parametri URL (query string):</h3>
+        <ul>
+        {% for k, v in acces.lista_parametri %}
+            <li>{{ k }} = {{ v }}</li>
+        {% empty %}
+            <li>Fără parametri</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nu există date despre accesare.</p>
+    {% endif %}
+</body>
+</html>

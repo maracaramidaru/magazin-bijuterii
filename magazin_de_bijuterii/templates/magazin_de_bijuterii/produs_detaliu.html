@@ -1,0 +1,38 @@
+{% extends 'magazin_de_bijuterii/baza.html' %}
+{% block body_class %}pagina-produs{% endblock %}
+{% block content %}
+
+<div class="produs-detaliu">
+    <h1>{{ produs.nume }}</h1>
+    <p><strong>Descriere:</strong> {{ produs.descriere }}</p>
+    <p><strong>Preț:</strong> {{ produs.pret }} RON</p>
+    <p><strong>Categorie:</strong> {{ produs.categorie.nume }}</p>
+    <p><strong>Brand:</strong> {{ produs.brand.nume }}</p>
+    <p><strong>Disponibilitate:</strong> {{ produs.disponibilitate_text }}</p>
+    <p><strong>Data adăugării:</strong> {{ produs.data_adaugarii }}</p>
+
+    <h3>Materiale:</h3>
+    <ul>
+        {% for material in produs.material.all %}
+            <li>{{ material.get_material_display }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Dimensiuni:</h3>
+    <ul>
+        {% for d in produs.dimensiune.all %}
+            <li>{{ d.marime }} cm / {{ d.greutate }} g</li>
+        {% endfor %}
+    </ul>
+
+    {% if produs.imagini.all %}
+        <div class="imagini-produs">
+            {% for img in produs.imagini.all %}
+                <img src="{{ img.url_imagine }}" alt="{{ produs.nume }}" width="250">
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <p><a href="{% url 'produse' %}">← Înapoi la lista produselor</a></p>
+</div>
+{% endblock %} 

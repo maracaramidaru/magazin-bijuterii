@@ -1,0 +1,16 @@
+{% extends 'magazin_de_bijuterii/baza.html' %}
+{% load static %}
+{% block title %}Despre Noi{% endblock %}
+
+{% block content %}
+<section id="istoric">
+    <h2>Istoric și misiune</h2>
+    <p>Magazinul nostru de bijuterii a fost fondat din pasiune pentru eleganță și rafinament. Scopul nostru este să oferim produse unice, lucrate cu atenție la detalii.</p>
+    <img src="{% static 'magazin_de_bijuterii\imagini\download.jpg' %}" alt="Noutăți" class="noutati-img" style="width:400px;height:400px;">
+</section>
+
+<section id="echipa">
+    <h2>Echipa noastră</h2>
+    <p>Echipa noastră este formată din specialiști dedicați, care pun suflet în fiecare bijuterie creată.</p>
+</section>
+{% endblock %}

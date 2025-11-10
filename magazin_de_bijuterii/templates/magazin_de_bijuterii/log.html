@@ -1,0 +1,72 @@
+{% extends "magazin_de_bijuterii/baza.html" %}
+
+{% block title %}Jurnal accesări{% endblock %}
+
+{% block content %}
+<h2>Log Accesări</h2>
+
+{% if accesari %}
+    <ul>
+        {% for acc in accesari %}
+            <li>
+                <b>ID:</b> {{ acc.id }},
+                <b>IP:</b> {{ acc.ip_client }},
+                <b>URL:</b> {{ acc.url }},
+                <b>Data:</b> {{ acc.timestamp|date:"d M Y H:i:s" }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nu există accesări de afișat.</p>
+{% endif %}
+
+{% if mesaj %}
+    <p style="color:red">{{ mesaj }}</p>
+{% endif %}
+
+{% if eroare %}
+    <p style="color:red">{{ eroare }}</p>
+{% endif %}
+
+{% if numar_accesari_server %}
+    <h3>Număr accesări în sesiunea curentă: {{ numar_accesari_server }}</h3>
+{% endif %}
+{% if detalii_accesari %}
+    <h3>Detalii Accesări:</h3>
+    <ul>
+        {% for det in detalii_accesari %}
+            <li>{{ det }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if tabel_date %}
+    <h2>Tabel accesări</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            {% for c in campuri %}
+                <th>{{ c }}</th>
+            {% endfor %}
+        </tr>
+        {% for acc in tabel_date %}
+            <tr>
+                {% for c in campuri %}
+                    <td>
+                        {% if c == "id" %}{{ acc.id }}
+                        {% elif c == "ip_client" %}{{ acc.ip_client }}
+                        {% elif c == "url" %}{{ acc.url }}
+                        {% elif c == "timestamp" %}{{ acc.timestamp }}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+{% if pagina_max and pagina_min %}
+    <h3>Statistici accesări</h3>
+    <p><b>Pagina cea mai accesată:</b> {{ pagina_max }} ({{ accesari_max }} accesări)</p>
+    <p><b>Pagina cea mai puțin accesată:</b> {{ pagina_min }} ({{ accesari_min }} accesări)</p>
+{% endif %}
+
+{% endblock %}

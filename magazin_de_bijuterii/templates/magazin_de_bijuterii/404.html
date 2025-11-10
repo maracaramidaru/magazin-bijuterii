@@ -1,0 +1,8 @@
+{% extends 'magazin_de_bijuterii/baza.html' %}
+{% block content %}
+<div style="text-align: center; padding: 50px;">
+    <h1>❌ Produsul nu există!</h1>
+    <p>Ne pare rău, dar produsul căutat nu a fost găsit.</p>
+    <a href="{% url 'produse' %}">← Înapoi la toate produsele</a>
+</div>
+{% endblock %}

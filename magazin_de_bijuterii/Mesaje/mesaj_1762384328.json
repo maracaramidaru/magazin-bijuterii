@@ -1,0 +1,16 @@
+{
+    "nume": "caramidaru",
+    "prenume": "mara",
+    "cnp": "1960302123456",
+    "data_nasterii": "29 ani și 8 luni",
+    "email": "maracaramidaru1@yahoo.com",
+    "tip_mesaj": "review",
+    "subiect": "review",
+    "minim_zile_asteptare": 10,
+    "mesaj": "bun caramidaru",
+    "varsta": "29 ani și 8 luni",
+    "urgent": false,
+    "ip": "127.0.0.1",
+    "timestamp": 1762384328,
+    "data_trimiterii": "2025-11-06 01:12:08"
+}

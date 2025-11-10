@@ -1,0 +1,23 @@
+{% extends 'magazin_de_bijuterii/baza.html' %}
+{% load static %}
+{% block title %}Pagina de contact{% endblock %}
+
+{% block content %}
+
+<h2>Contactează-ne</h2>
+{% if messages %}
+  {% for message in messages %}
+    <p style="color: {% if message.tags == 'error' %}red{% else %}green{% endif %};">
+      {{ message }}
+    </p>
+  {% endfor %}
+{% endif %}
+
+<form method="post" novalidate>
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button type="submit">Trimite mesajul</button>
+  <button type="reset" onclick="return confirm('Ești sigur că vrei să resetezi formularul?')">Resetează</button>
+</form>
+{% endblock %}

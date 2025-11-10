@@ -1,0 +1,74 @@
+{% extends "magazin_de_bijuterii/baza.html" %}
+
+{% block title %}{{ titlu }}{% endblock %}
+
+{% block content %}
+<h2>{{ titlu }}</h2>
+
+{% if categorie %}
+    <h2 style="color: {{ categorie.culoare }};">
+        <i class="fa {{ categorie.icon }}"></i> {{ categorie.nume }}
+    </h2>
+    <p><em>{{ categorie.descriere }}</em></p>
+{% endif %}
+<form method="get" id="filtru-form">
+    {{ form.as_p }}
+    <button type="submit">Filtrează</button>
+    <a href="{% url 'produse' %}" class="btn-reset" onclick="return confirmReset()">Resetează filtre</a>
+</form>
+
+{% if mesaj_paginare %}
+    <p style="color:red;"><strong>{{ mesaj_paginare }}</strong></p>
+{% endif %}
+
+<script>
+function confirmReset() {
+    return confirm("Sigur vrei să resetezi filtrele? Vei pierde toate criteriile aplicate.");
+}
+</script>
+<div class="sortare">
+    <strong>Sortează după preț:</strong>
+    <a href="?sort=a">Ascendent</a> |
+    <a href="?sort=d">Descendent</a>
+</div>
+
+{% if page_obj %}
+    <div class="grid-produse">
+        {% for produs in page_obj %}
+        <div class="produs">
+            <h3><a href="{% url 'produs_detaliu' produs.id %}">{{ produs.nume }}</a></h3>
+            <p>{{ produs.descriere|truncatewords:20 }}</p>
+            <p><strong>Preț:</strong> {{ produs.pret }} RON</p>
+            <p><strong>Categorie:</strong>
+                <a href="{% url 'produse_categorie' produs.categorie.nume %}"
+                style="color: {{ produs.categorie.culoare }};">
+                    <i class="fa {{ produs.categorie.icon }}"></i> {{ produs.categorie.nume }}
+                </a>
+            <a href="{% url 'adauga_in_cos' produs.id %}" class="btn btn-primary">Adaugă în coș</a>
+            </p>
+            <p><strong>Brand:</strong> {{ produs.brand.nume }}</p>
+
+            {% if produs.imagini.first %}
+                <img src="{{ produs.imagini.first.url_imagine }}" alt="{{ produs.nume }}" width="200">
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="paginare">
+        <span>Pagina {{ page_obj.number }} din {{ page_obj.paginator.num_pages }}</span>
+        <div class="buton-paginare">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}{% if sort_order %}&sort={{ sort_order }}{% endif %}">← Înapoi</a>
+            {% endif %}
+            
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% if sort_order %}&sort={{ sort_order }}{% endif %}">Înainte →</a>
+            {% endif %}
+        </div>
+    </div>
+
+{% else %}
+    <p>Nu există produse în această categorie.</p>
+{% endif %}
+{% endblock %} 

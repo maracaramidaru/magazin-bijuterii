@@ -1,0 +1,42 @@
+{% extends 'magazin_de_bijuterii/baza.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">{{ titlu }}</h2>
+
+    {% if cos %}
+        <div class="grid-produse">
+            {% for produs in cos %}
+            <div class="produs">
+                <h3><a href="{% url 'produs_detaliu' produs.id %}">{{ produs.nume }}</a></h3>
+                <p>{{ produs.descriere|truncatewords:20 }}</p>
+                <p><strong>Preț:</strong> {{ produs.pret }} RON</p>
+                <p><strong>Categorie:</strong>
+                    <span style="color: {{ produs.categorie_culoare }};">
+                        <i class="fa {{ produs.categorie_icon }}"></i> {{ produs.categorie }}
+                    </span>
+                </p>
+                <p><strong>Brand:</strong> {{ produs.brand }}</p>
+
+                {% if produs.imagine %}
+                    <img src="{{ produs.imagine }}" alt="{{ produs.nume }}" width="200">
+                {% else %}
+                    <p><em>Fără imagine</em></p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-4">
+            <h4>Total general: <span class="text-primary">{{ total|floatformat:2 }} lei</span></h4>
+            <a href="{% url 'produse' %}" class="btn btn-secondary mt-3">⬅️ Continuă cumpărăturile</a>
+            <a href="{% url 'goleste_cos' %}" class="btn btn-outline-danger mt-3 ms-2">Golește coșul</a>
+        </div>
+
+    {% else %}
+        <div class="alert alert-info text-center">
+            🛒 Coșul tău este gol! <a href="{% url 'produse' %}">Vezi produsele disponibile</a>.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
