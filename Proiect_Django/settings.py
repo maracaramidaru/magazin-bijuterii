@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import logging
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+#AUTH_USER_MODEL = 'magazin_de_bijuterii.CustomUser'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -39,8 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'magazin_de_bijuterii.apps.MagazinDeBijuteriiConfig',
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
     
 ]
+
+SITE_ID = 1
+AUTH_USER_MODEL = 'magazin_de_bijuterii.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,15 +87,11 @@ WSGI_APPLICATION = 'Proiect_Django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': { 'options': '-c search_path=django' },
-        'NAME': 'magazin_bd',     
-        'USER': 'mara',             
-        'PASSWORD': 'mara1234',    
-        'HOST': 'localhost',        
-        'PORT': '5432',           
-        'OPTIONS': {
-            'options': '-c search_path=django'  
-        },
+        'NAME': 'test_backup_db',
+        'USER': 'mara',
+        'PASSWORD': 'mara1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -135,3 +138,111 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.yahoo.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'maracaramidaru1@yahoo.com'  
+EMAIL_HOST_PASSWORD = 'wajnbsamghykhlsr'      
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+ADMINS = [
+    ('Admin1', 'maracaramidaru1@yahoo.com'),
+    ('Admin2', 'maracaramidaru1@yahoo.com'),
+]
+SERVER_EMAIL = 'maracaramidaru1@yahoo.com'
+DEFAULT_FROM_EMAIL = 'maracaramidaru1@yahoo.com'
+
+LOG_DIR = os.path.join(BASE_DIR, "logs")
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+    
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'formatters': {
+        'verbose': {
+            'format': '[{asctime}] {levelname} {name}: {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname}: {message}',
+            'style': '{',
+        },
+    },
+
+    'handlers': {
+ 
+        'console_warnings': {
+            'level': 'WARNING',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+
+        'debug_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'debug.log'),
+            'formatter': 'verbose',
+        },
+        'info_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'info.log'),
+            'formatter': 'verbose',
+        },
+        'warning_file': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'warning.log'),
+            'formatter': 'verbose',
+        },
+        'error_file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'error.log'),
+            'formatter': 'verbose',
+        },
+        'critical_file': {
+            'level': 'CRITICAL',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'critical.log'),
+            'formatter': 'verbose',
+        },
+    },
+
+    'loggers': {
+        'django': {
+            'handlers': [
+                'console_warnings',  
+                'debug_file',
+                'info_file',
+                'warning_file',
+                'error_file',
+                'critical_file',
+            ],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    }
+}
+
+N_MAX_403 = 5
+
+
+# Task 1
+DELETE_UNCONFIRMED_USERS_EVERY_K_MINUTES = 2  # K = 2 minute
+
+# Task 2
+NEWSLETTER_DAY = "monday"   # Z
+NEWSLETTER_HOUR = 12        # O
+NEWSLETTER_MIN_USER_AGE = 5 # X minute
+
+# Task 3 extra
+TASK_M_MINUTES = 3          # M
+TASK_Z2_DAY = "friday"
+TASK_Z2_HOUR = 18
+
+

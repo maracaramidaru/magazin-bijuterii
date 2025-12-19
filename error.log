@@ -1,0 +1,709 @@
+[2025-12-06 19:22:36,163] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/promotii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 1155, in promotii_view
+    return render(request, 'magazin_de_bijuterii/promotii.html', {'form': form})
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+[2025-12-06 19:22:36,216] ERROR django.server: "GET /magazin_de_bijuterii/promotii/ HTTP/1.1" 500 135957
+[2025-12-06 19:23:02,471] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/promotii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: baza.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 1155, in promotii_view
+    return render(request, 'magazin_de_bijuterii/promotii.html', {'form': form})
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: baza.html
+[2025-12-06 19:23:02,478] ERROR django.server: "GET /magazin_de_bijuterii/promotii/ HTTP/1.1" 500 135957
+[2025-12-06 19:23:04,980] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/promotii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: baza.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 1155, in promotii_view
+    return render(request, 'magazin_de_bijuterii/promotii.html', {'form': form})
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: baza.html
+[2025-12-06 19:23:04,986] ERROR django.server: "GET /magazin_de_bijuterii/promotii/ HTTP/1.1" 500 135957
+[2025-12-07 03:28:26,460] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/promotii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 1150, in promotii_view
+    return redirect('promotii_succes')
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\shortcuts.py", line 51, in redirect
+    resolve_url(to, *args, **kwargs),
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'promotii_succes' not found. 'promotii_succes' is not a valid view function or pattern name.
+[2025-12-07 03:28:26,467] ERROR django.server: "POST /magazin_de_bijuterii/promotii/ HTTP/1.1" 500 96103
+[2025-12-07 04:12:32,557] ERROR django.request: Internal Server Error: /produse/bratara/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 338, in produse_categorie
+    return render(request, 'magazin_de_bijuterii/produse.html', {
+        'page_obj': page_obj,
+    ...<4 lines>...
+        'mesaj_paginare': mesaj_paginare,
+    })
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'produs_detaliu' not found. 'produs_detaliu' is not a valid view function or pattern name.
+[2025-12-07 04:12:32,567] ERROR django.server: "GET /produse/bratara/ HTTP/1.1" 500 187711
+[2025-12-07 04:14:01,886] ERROR django.request: Internal Server Error: /produse/bratara/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 338, in produse_categorie
+    return render(request, 'magazin_de_bijuterii/produse.html', {
+        'page_obj': page_obj,
+    ...<4 lines>...
+        'mesaj_paginare': mesaj_paginare,
+    })
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detalii_produs_view' not found. 'detalii_produs_view' is not a valid view function or pattern name.
+[2025-12-07 04:14:01,894] ERROR django.server: "GET /produse/bratara/ HTTP/1.1" 500 187968
+[2025-12-09 23:45:59,198] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/promotii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 1283, in promotii_view
+    with open(template_path, 'r', encoding='utf-8') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marac\\Desktop\\Django\\Proiect_Django\\magazin_de_bijuterii\\templates\\email_templates\\promo_template1.txt'
+[2025-12-09 23:45:59,203] ERROR django.server: "POST /magazin_de_bijuterii/promotii/ HTTP/1.1" 500 77734
+[2025-12-09 23:48:11,153] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/promotii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 1283, in promotii_view
+    with open(template_path, 'r', encoding='utf-8') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marac\\Desktop\\Django\\Proiect_Django\\magazin_de_bijuterii\\templates\\email_templates\\promo_template1.txt'
+[2025-12-09 23:48:11,157] ERROR django.server: "POST /magazin_de_bijuterii/promotii/ HTTP/1.1" 500 77734
+[2025-12-09 23:48:34,345] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/promotii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 1283, in promotii_view
+    with open(template_path, 'r', encoding='utf-8') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marac\\Desktop\\Django\\Proiect_Django\\magazin_de_bijuterii\\templates\\email_templates\\promo_template1.txt'
+[2025-12-09 23:48:34,349] ERROR django.server: "POST /magazin_de_bijuterii/promotii/ HTTP/1.1" 500 77734
+[2025-12-10 00:29:01,776] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/promotii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 1283, in promotii_view
+    with open(template_path, 'r', encoding='utf-8') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marac\\Desktop\\Django\\Proiect_Django\\magazin_de_bijuterii\\templates\\email_templates\\promo_template1.txt'
+[2025-12-10 00:29:01,781] ERROR django.server: "POST /magazin_de_bijuterii/promotii/ HTTP/1.1" 500 77734
+[2025-12-10 00:33:07,974] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/promotii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 1283, in promotii_view
+    with open(template_path, 'r', encoding='utf-8') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marac\\Desktop\\Django\\Proiect_Django\\magazin_de_bijuterii\\templates\\email_templates\\promo_template1.txt'
+[2025-12-10 00:33:07,978] ERROR django.server: "POST /magazin_de_bijuterii/promotii/ HTTP/1.1" 500 77734
+[2025-12-10 02:00:56,353] ERROR django.request: Internal Server Error: /admin/auth/group/1/change/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\options.py", line 1877, in _changeform_view
+    fieldsets = self.get_fieldsets(request, obj)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\admin.py", line 95, in get_fieldsets
+    return fieldsets + (
+           ~~~~~~~~~~^~~
+        ("Utilizatori", {"fields": ("users_in_group",)}),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    )
+    ~
+TypeError: can only concatenate list (not "tuple") to list
+[2025-12-10 02:00:56,362] ERROR django.server: "GET /admin/auth/group/1/change/ HTTP/1.1" 500 125659
+[2025-12-10 02:01:10,644] ERROR django.request: Internal Server Error: /admin/auth/group/1/change/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\admin\options.py", line 1877, in _changeform_view
+    fieldsets = self.get_fieldsets(request, obj)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\admin.py", line 95, in get_fieldsets
+    return fieldsets + (
+           ~~~~~~~~~~^~~
+        ("Utilizatori", {"fields": ("users_in_group",)}),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    )
+    ~
+TypeError: can only concatenate list (not "tuple") to list
+[2025-12-10 02:01:10,650] ERROR django.server: "GET /admin/auth/group/1/change/ HTTP/1.1" 500 125523
+[2025-12-11 02:34:51,715] ERROR django: Mesaj ERROR - test
+[2025-12-11 02:34:51,717] CRITICAL django: Mesaj CRITICAL - test
+[2025-12-11 02:38:18,025] ERROR django: Mesaj ERROR - test
+[2025-12-11 02:38:18,026] CRITICAL django: Mesaj CRITICAL - test
+[2025-12-11 02:39:40,631] ERROR django: Mesaj ERROR - test
+[2025-12-11 02:39:40,632] CRITICAL django: Mesaj CRITICAL - test
+[2025-12-11 13:07:02,754] ERROR django.request: Internal Server Error: /magazin_de_bijuterii/
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'user.groups.filter(name="Administratori_site").exists'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\Desktop\Django\Proiect_Django\magazin_de_bijuterii\views.py", line 253, in index
+    return render(request, 'magazin_de_bijuterii/index.html', {'user_ip': user_ip})
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(name="Administratori_site").exists' from 'user.groups.filter(name="Administratori_site").exists'
+[2025-12-11 13:07:02,770] ERROR django.server: "GET /magazin_de_bijuterii/ HTTP/1.1" 500 215202
+[2025-12-18 02:39:27,196] ERROR django.request: Internal Server Error: /sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "django_site" does not exist
+LINE 1: ..."django_site"."domain", "django_site"."name" FROM "django_si...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\views.py", line 100, in sitemap
+    req_site = get_current_site(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sites\shortcuts.py", line 16, in get_current_site
+    return Site.objects.get_current(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sites\models.py", line 59, in get_current
+    return self._get_site_by_id(site_id)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sites\models.py", line 30, in _get_site_by_id
+    site = self.get(pk=site_id)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "django_site" does not exist
+LINE 1: ..."django_site"."domain", "django_site"."name" FROM "django_si...
+                                                             ^
+
+[2025-12-18 02:39:27,258] ERROR django.server: "GET /sitemap.xml HTTP/1.1" 500 148817
+[2025-12-18 02:46:55,282] ERROR django.request: Internal Server Error: /sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\__init__.py", line 124, in _urls
+    loc = f"{protocol}://{domain}{self._location(item)}"
+                                  ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\__init__.py", line 69, in _location
+    return self._get("location", item)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\__init__.py", line 79, in location
+    return item.get_absolute_url()
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Produs' object has no attribute 'get_absolute_url'
+[2025-12-18 02:46:55,288] ERROR django.server: "GET /sitemap.xml HTTP/1.1" 500 99445
+[2025-12-18 08:42:09,925] ERROR django.request: Internal Server Error: /sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\__init__.py", line 126, in _urls
+    lastmod = self._get("lastmod", item)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+  File "C:\Users\marac\AppData\Roaming\Python\Python314\site-packages\django\contrib\sitemaps\__init__.py", line 190, in lastmod
+    return getattr(item, self.date_field)
+AttributeError: 'Produs' object has no attribute 'data_creare'
+[2025-12-18 08:42:09,943] ERROR django.server: "GET /sitemap.xml HTTP/1.1" 500 95907

@@ -35,15 +35,34 @@
 
                 <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="{% url 'vizualizare_cos' %}">Coș virtual</a></li>
-                <li><a href="{% url 'log' %}">Log</a></li>
-                <li><a href="{% url 'info' %}">Info</a></li>
+                {% if user.is_authenticated and "Administratori_site" in user.groups.all|stringformat:"s" %}
+                    <li><a href="{% url 'log' %}">Log</a></li>
+                    <li><a href="{% url 'info' %}">Info</a></li>
+                {% endif %}
+
+                
+                {% if user.is_authenticated and "Administratori_site" in user.groups.all|stringformat:"s" %}
+                    <li><a href="{% url 'adauga_produs' %}">Adaugă produs</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
     <main>
-        {% block content %}
-        {% endblock %}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">
+                    {{ message }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
     </main>
+
 
     <footer>
         <p>© 2025 Magazin de Bijuterii</p>

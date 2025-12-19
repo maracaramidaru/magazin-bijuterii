@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Eroare 403</title>
+    <style>
+        .alerta {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p>{{ salut }}</p>
+
+    <h1>
+        {% if titlu %}
+            {{ titlu }}
+        {% else %}
+            Eroare 403
+        {% endif %}
+    </h1>
+
+    <p>{{ mesaj_personalizat }}</p>
+    <p>Ați ajuns pe această pagină de <strong>{{ numar_accesari }}</strong> ori în această sesiune.</p>
+    {% if numar_accesari > limita_accesari %}
+        <p class="alerta">Atenție! Ați depășit limita de accesări permise!</p>
+    {% endif %}
+
+</body>
+</html>

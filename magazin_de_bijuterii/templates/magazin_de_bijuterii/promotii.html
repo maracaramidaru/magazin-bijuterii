@@ -1,0 +1,9 @@
+{% extends "magazin_de_bijuterii/baza.html" %}
+{% block content %}
+<h1>Trimite promoție</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Trimite promoție</button>
+</form>
+{% endblock %}

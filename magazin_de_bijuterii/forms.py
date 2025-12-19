@@ -1,8 +1,14 @@
 from django import forms
 from django.core.exceptions import ValidationError 
-from .models import Categorie, Brand, Produs
+from .models import Categorie, Brand, Produs,Promotie
 from datetime import date, datetime
 import re
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from .models import CustomUser
+import secrets
+
 
 class ProduseFilterForm(forms.Form):
     nume = forms.CharField(
@@ -147,9 +153,6 @@ class ContactForm(forms.Form):
         required=True
     )
 
-    # -------------------------
-    # VALIDĂRI INDIVIDUALE
-    # -------------------------
     def clean_cnp(self):
         cnp = self.cleaned_data.get('cnp')
         if cnp:
@@ -165,13 +168,11 @@ class ContactForm(forms.Form):
                 luna = int(cnp[3:5])
                 zi = int(cnp[5:7])
 
-                # Determinăm secolul în funcție de prima cifră
                 if cnp[0] in ('1', '2'):
                     an += 1900
                 elif cnp[0] in ('5', '6'):
                     an += 2000
 
-                # Verificăm dacă data este validă
                 datetime(an, luna, zi)
 
             except ValueError:
@@ -179,9 +180,6 @@ class ContactForm(forms.Form):
 
         return cnp
 
-    # -------------------------
-    # VALIDĂRI ȘI PREPROCESĂRI GLOBALE
-    # -------------------------
     def clean(self):
         cleaned_data = super().clean()
 
@@ -194,21 +192,14 @@ class ContactForm(forms.Form):
         data_nasterii = cleaned_data.get("data_nasterii")
         cnp = cleaned_data.get("cnp")
 
-        # -------------------
-        # VALIDĂRI GLOBALE
-        # -------------------
-
-        # 1️⃣ Emailurile trebuie să coincidă
         if email and confirmare_email and email != confirmare_email:
             raise ValidationError("❌ Adresele de e-mail nu coincid.")
 
-        # 2️⃣ Verificare semnătură în mesaj (ultimul cuvânt = numele)
         if mesaj and nume:
             cuvinte_mesaj = mesaj.strip().split()
             if not cuvinte_mesaj or cuvinte_mesaj[-1].lower() != nume.lower():
                 raise ValidationError("✍️ Mesajul trebuie să se încheie cu numele tău ca semnătură.")
 
-        # 3️⃣ Zile de așteptare în funcție de tipul mesajului
         if tip_mesaj and zile:
             if tip_mesaj in ['review', 'cerere'] and zile < 4:
                 raise ValidationError("⏳ Pentru review-uri și cereri este necesar un minim de 4 zile.")
@@ -217,7 +208,6 @@ class ContactForm(forms.Form):
             elif zile > 30:
                 raise ValidationError("⚠️ Numărul maxim de zile permis este 30.")
 
-        # 4️⃣ CNP ↔ Data nașterii
         if cnp and data_nasterii:
             try:
                 prefix = cnp[0]
@@ -234,11 +224,6 @@ class ContactForm(forms.Form):
             except Exception:
                 raise ValidationError("❗ CNP-ul are un format invalid pentru verificarea cu data nașterii.")
 
-        # -------------------
-        # PREPROCESĂRI
-        # -------------------
-
-        # 1️⃣ Înlocuiește data_nasterii cu vârsta exprimată în ani și luni
         if data_nasterii:
             azi = date.today()
             ani = azi.year - data_nasterii.year
@@ -251,17 +236,12 @@ class ContactForm(forms.Form):
             cleaned_data["varsta"] = f"{ani} ani și {luni} luni"
             cleaned_data["data_nasterii"] = cleaned_data["varsta"]
 
-        # 2️⃣ Normalizează mesajul:
-        #    - linii noi → spații
-        #    - spații multiple → un singur spațiu
-        #    - literă mare după ., ?, !, ...
         if mesaj:
             text = mesaj.replace('\n', ' ')
             text = re.sub(r'\s+', ' ', text)
             text = re.sub(r'(?<=[\.\?!…])\s*([a-z])', lambda m: ' ' + m.group(1).upper(), text)
             cleaned_data["mesaj"] = text.strip()
 
-        # 3️⃣ Setează urgent = True dacă zile == minimul cerut
         urgent = False
         if tip_mesaj and zile:
             if (tip_mesaj in ['review', 'cerere'] and zile == 4) or \
@@ -283,23 +263,36 @@ def validate_description_min_words(value):
     if len(words) < 3:
         raise ValidationError("Descrierea trebuie să conțină cel puțin 3 cuvinte.")
 
-# --- FORMULARUL PRINCIPAL ---
-
 class ProdusForm(forms.ModelForm):
-    confirmare_pret = forms.DecimalField(
-        label="Confirmare preț (lei)",
+
+    pret_baza = forms.DecimalField(
+        label="Preț de bază (lei)",
         required=True,
         min_value=0,
-        help_text="Introduceți din nou prețul pentru confirmare."
+        help_text="Introduceți costul de achiziție al produsului."
+    )
+
+    procent_adaos = forms.DecimalField(
+        label="Adaos comercial (%)",
+        required=True,
+        min_value=0,
+        max_value=200,
+        help_text="Introduceți procentul de adaos aplicat peste prețul de bază."
+    )
+
+    confirmare_pret = forms.DecimalField(
+        label="Confirmare preț final (lei)",
+        required=True,
+        min_value=0,
+        help_text="Introduceți din nou prețul calculat pentru confirmare."
     )
 
     class Meta:
         model = Produs
-        fields = ['nume', 'descriere', 'pret', 'brand', 'categorie']
+        fields = ['nume', 'descriere', 'brand', 'categorie']
         labels = {
             'nume': 'Nume produs',
             'descriere': 'Descriere detaliată',
-            'pret': 'Preț (lei)',
             'brand': 'Brand asociat',
             'categorie': 'Categorie produs'
         }
@@ -307,18 +300,18 @@ class ProdusForm(forms.ModelForm):
             'nume': 'Trebuie să înceapă cu literă mare și să nu conțină simboluri speciale.',
             'descriere': 'Scrie o descriere clară și coerentă (minim 3 cuvinte).'
         }
-        # Un câmp cu două validări externe
-        validators = {
-            'nume': [validate_starts_with_capital, validate_no_special_chars]
-        }
 
-    # --- VALIDĂRI PE CÂMPURI ---
+    def clean_nume(self):
+        nume = self.cleaned_data.get('nume')
+        validate_capitalized_text(nume)
+        validate_capital_after_space_or_dash(nume)
+        return nume
 
-    def clean_pret(self):
-        pret = self.cleaned_data.get('pret')
-        if pret is not None and pret <= 0:
-            raise forms.ValidationError("Prețul trebuie să fie mai mare decât 0 lei.")
-        return pret
+    def clean_procent_adaos(self):
+        adaos = self.cleaned_data.get('procent_adaos')
+        if adaos and adaos > 150:
+            raise ValidationError("Adaosul comercial nu poate depăși 150%.")
+        return adaos
 
     def clean_descriere(self):
         descriere = self.cleaned_data.get('descriere', '')
@@ -327,28 +320,115 @@ class ProdusForm(forms.ModelForm):
             raise ValidationError("Descrierea este prea lungă (maxim 300 de caractere).")
         return descriere
 
-    # --- VALIDARE MULTI-CÂMP ---
-
     def clean(self):
         cleaned_data = super().clean()
-        pret = cleaned_data.get('pret')
+        pret_baza = cleaned_data.get('pret_baza')
+        procent_adaos = cleaned_data.get('procent_adaos')
         confirmare_pret = cleaned_data.get('confirmare_pret')
         categorie = cleaned_data.get('categorie')
 
-        if pret and confirmare_pret and pret != confirmare_pret:
-            raise ValidationError("Prețul introdus și confirmarea nu coincid.")
+        if pret_baza and procent_adaos:
+            pret_calculat = pret_baza + (pret_baza * procent_adaos / 100)
+            if confirmare_pret and round(confirmare_pret, 2) != round(pret_calculat, 2):
+                raise ValidationError(
+                    f"Confirmarea prețului ({confirmare_pret} lei) nu coincide cu prețul calculat ({pret_calculat:.2f} lei)."
+                )
 
-        if categorie and categorie.nume.lower() == "lux" and pret and pret < 500:
-            raise ValidationError("Produsele din categoria 'Lux' trebuie să aibă un preț de cel puțin 500 lei.")
+            if categorie and categorie.nume.lower() == "lux" and pret_calculat < 500:
+                raise ValidationError("Produsele din categoria 'Lux' trebuie să aibă un preț de cel puțin 500 lei.")
 
         return cleaned_data
 
-    # --- SALVARE CU commit=False ---
-
     def save(self, commit=True):
         produs = super().save(commit=False)
+        pret_baza = self.cleaned_data.get('pret_baza')
+        procent_adaos = self.cleaned_data.get('procent_adaos')
+
+        produs.pret = pret_baza + (pret_baza * procent_adaos / 100)
         produs.data_adaugare = datetime.now()
         produs.cod = f"PRD-{int(datetime.timestamp(datetime.now()))}"
+
         if commit:
             produs.save()
         return produs
+
+
+GEN_CHOICES = [
+    ('M', 'Masculin'),
+    ('F', 'Feminin'),
+]
+
+
+class InregistrareForm(UserCreationForm):
+    email = forms.EmailField(required=True, label="Email")
+    telefon = forms.CharField(max_length=15, required=True, label="Telefon")
+    adresa = forms.CharField(max_length=255, required=True, label="Adresa")
+    oras = forms.CharField(max_length=100, required=True, label="Oras")
+    data_nasterii = forms.DateField(
+        required=True,
+        label="Data nașterii",
+        widget=forms.DateInput(attrs={'type': 'date'})
+    )
+    gen = forms.ChoiceField(choices=GEN_CHOICES, required=True, label="Gen")
+
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2',
+                  'telefon', 'adresa', 'oras', 'data_nasterii', 'gen']
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if CustomUser.objects.filter(email=email).exists():
+            raise forms.ValidationError("Acest email este deja folosit.")
+        return email
+
+    def clean_telefon(self):
+        telefon = self.cleaned_data.get('telefon')
+        if not telefon.isdigit():
+            raise forms.ValidationError("Numărul de telefon trebuie să conțină doar cifre.")
+        if len(telefon) < 10:
+            raise forms.ValidationError("Numărul de telefon trebuie să aibă cel puțin 10 cifre.")
+        return telefon
+    
+    def clean_data_nasterii(self):
+        data_nasterii = self.cleaned_data.get('data_nasterii')
+        azi = date.today()
+        varsta = azi.year - data_nasterii.year - ((azi.month, azi.day) < (data_nasterii.month, data_nasterii.day))
+        if varsta < 14:
+            raise forms.ValidationError("Trebuie să ai cel puțin 14 ani pentru a te înregistra.")
+        return data_nasterii
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+        user.telefon = self.cleaned_data['telefon']
+        user.adresa = self.cleaned_data['adresa']
+        user.oras = self.cleaned_data['oras']
+        user.data_nasterii = self.cleaned_data['data_nasterii']
+        user.gen = self.cleaned_data['gen']
+       
+        user.cod = secrets.token_urlsafe(16)   
+        user.email_confirmat = False           
+
+        if commit:
+            user.save()
+        return user
+    
+class LoginForm(AuthenticationForm):
+    remember_me = forms.BooleanField(required=False, label="Rămâi logat o zi")
+
+class PromotieForm(forms.ModelForm):
+    class Meta:
+        model = Promotie
+        fields = [
+            'nume',
+            'subiect',
+            'mesaj',
+            'data_expirare',
+            'reducere_procent',
+            'cod_cupon',
+            'categorii'
+        ]
+        widgets = {
+            'categorii': forms.CheckboxSelectMultiple()
+        }

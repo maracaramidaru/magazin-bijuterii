@@ -1,7 +1,31 @@
-# magazin_bijuterii/models.py
+
 from django.db import models
 from urllib.parse import urlparse, parse_qsl
+from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+from django.utils import timezone
+from django.conf import settings 
+from django.urls import reverse
 
+GEN_CHOICES = [
+    ('M', 'Masculin'),
+    ('F', 'Feminin'),
+]
+
+class CustomUser(AbstractUser):
+    telefon = models.CharField(max_length=15)
+    adresa = models.CharField(max_length=255)
+    oras = models.CharField(max_length=100)
+    data_nasterii = models.DateField()
+    gen = models.CharField(max_length=10, choices=GEN_CHOICES)
+    blocat = models.BooleanField(default=False)
+    cod = models.CharField(max_length=100, null=True, blank=True)
+    email_confirmat = models.BooleanField(default=False)
+    REQUIRED_FIELDS = ['email', 'telefon', 'adresa', 'oras', 'data_nasterii', 'gen']
+
+    def __str__(self):
+        return self.username
+    
 class Accesare(models.Model):
     ip_client = models.GenericIPAddressField(null=True, blank=True)
     url = models.TextField()
@@ -84,6 +108,8 @@ class Produs(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='produse')
     dimensiune = models.ManyToManyField(Dimensiune, related_name='produse')
 
+    def get_absolute_url(self):
+        return reverse('detalii_produs', args=[self.id])
     def __str__(self):
         return self.nume
     
@@ -104,3 +130,28 @@ class Imagine(models.Model):
 
     def __str__(self):
         return f"Imagine pentru {self.produs.nume}"
+N = 5  
+K = 3   
+
+class Vizualizare(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    produs = models.ForeignKey(Produs, on_delete=models.CASCADE)
+    data_vizualizare = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['-data_vizualizare']  # cele mai noi primele
+
+
+class Promotie(models.Model):
+    nume = models.CharField(max_length=100)
+    subiect = models.CharField(max_length=200)
+    mesaj = models.TextField()
+    data_creare = models.DateTimeField(default=timezone.now)
+    data_expirare = models.DateField()
+    
+    reducere_procent = models.IntegerField(default=10)
+    cod_cupon = models.CharField(max_length=50)
+    categorii = models.ManyToManyField("Categorie")  
+
+    def __str__(self):
+        return self.nume

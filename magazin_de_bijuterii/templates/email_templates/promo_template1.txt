@@ -1,0 +1,4 @@
+Subiect: {subiect}
+Dragi clienți, avem pentru voi o ofertă specială!
+Promoția expiră la: {data_expirare}
+Profită de reducerea de {reducere_procent}% folosind codul: {cod_cupon}

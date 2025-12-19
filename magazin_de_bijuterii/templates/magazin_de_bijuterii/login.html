@@ -1,0 +1,18 @@
+{% extends 'magazin_de_bijuterii/baza.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="card mx-auto" style="max-width: 500px;">
+  <div class="card-body">
+    <h4 class="card-title text-center mb-4">Autentificare</h4>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="mb-3">{{ form.username.label_tag }} {{ form.username }}</div>
+      <div class="mb-3">{{ form.password.label_tag }} {{ form.password }}</div>
+      <div class="form-check mb-3">{{ form.remember_me }} {{ form.remember_me.label_tag }}</div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <p class="text-center mt-3">Nu ai cont? <a href="{% url 'inregistrare' %}">Înregistrează-te</a></p>
+  </div>
+</div>
+{% endblock %}

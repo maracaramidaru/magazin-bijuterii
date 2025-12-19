@@ -1,0 +1,22 @@
+{% extends 'magazin_de_bijuterii/baza.html' %}
+{% block title %}Profil{% endblock %}
+{% block content %}
+<div class="card mx-auto" style="max-width: 600px;">
+  <div class="card-body">
+    <h4 class="card-title mb-3 text-center">Profil utilizator</h4>
+    <ul class="list-group">
+      <li class="list-group-item"><b>Username:</b> {{ user.username }}</li>
+      <li class="list-group-item"><b>Email:</b> {{ user.email }}</li>
+      <li class="list-group-item"><b>Nume:</b> {{ user.first_name }} {{ user.last_name }}</li>
+      <li class="list-group-item"><b>Telefon:</b> {{ user.telefon }}</li>
+      <li class="list-group-item"><b>Adresă:</b> {{ user.adresa }}</li>
+      <li class="list-group-item"><b>Oraș:</b> {{ user.oras }}</li>
+      <li class="list-group-item"><b>Data nașterii:</b> {{ user.data_nasterii }}</li>
+      <li class="list-group-item"><b>Gen:</b> {{ user.gen }}</li>
+    </ul>
+    <div class="text-center mt-4">
+      <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

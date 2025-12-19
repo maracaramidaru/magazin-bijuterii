@@ -1,0 +1,16 @@
+{% extends 'magazin_de_bijuterii/baza.html' %}
+{% block title %}Înregistrare{% endblock %}
+{% block content %}
+<div class="card mx-auto" style="max-width: 600px;">
+  <div class="card-body">
+    <h4 class="card-title text-center mb-4">Creează un cont</h4>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+       <button type="submit">Înregistrează-te</button>
+       <li><a href="{% url 'profil' %}">Inregistreaza_te</a></li>
+    </form>
+    <p class="text-center mt-3">Ai deja cont? <a href="{% url 'login' %}">Login</a></p>
+  </div>
+</div>
+{% endblock %}

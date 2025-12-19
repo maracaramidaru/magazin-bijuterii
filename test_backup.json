@@ -1,0 +1,788 @@
+[
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 1,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-10-16T08:01:04.946Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 2,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/?detalii",
+        "timestamp": "2025-10-16T08:05:11.208Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 3,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/?tabel=tot",
+        "timestamp": "2025-10-16T08:05:29.552Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 4,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-10-28T06:50:34.338Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 5,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/?accesari=nr",
+        "timestamp": "2025-10-28T06:55:20.790Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 6,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/?iduri=2,3",
+        "timestamp": "2025-10-28T06:55:56.319Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 7,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/?tabel=tot",
+        "timestamp": "2025-10-28T06:57:32.851Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 8,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/?tabel=id,url",
+        "timestamp": "2025-10-28T06:58:08.813Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 9,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/accesare/",
+        "timestamp": "2025-10-28T07:13:49.170Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 10,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/",
+        "timestamp": "2025-10-28T07:17:10.886Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 11,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/?data=2025-10-28&nume=Alex&oras=Bucuresti",
+        "timestamp": "2025-10-28T07:18:15.340Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 12,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-10-28T12:10:28.530Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 13,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/?ultimele=5",
+        "timestamp": "2025-10-28T13:16:06.079Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 14,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/",
+        "timestamp": "2025-10-28T13:16:55.285Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 15,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-10-28T14:19:24.287Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 16,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/",
+        "timestamp": "2025-10-28T14:19:36.412Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 17,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-10-28T14:20:16.204Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 18,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-10-28T14:22:07.262Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 19,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-10-28T14:39:55.333Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 20,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-10-28T14:51:28.594Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 21,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/",
+        "timestamp": "2025-10-30T15:24:33.978Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 22,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/?data=zi",
+        "timestamp": "2025-10-30T15:24:41.498Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 23,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/?data=ora",
+        "timestamp": "2025-10-30T15:24:48.089Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 24,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/?data=timp",
+        "timestamp": "2025-10-30T15:24:56.453Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 25,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/",
+        "timestamp": "2025-10-30T15:25:41.461Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 26,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/",
+        "timestamp": "2025-11-02T22:32:48.467Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 27,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-11-06T18:57:03.332Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 28,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/",
+        "timestamp": "2025-11-06T18:57:11.430Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 29,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-11-06T19:19:27.997Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 30,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/",
+        "timestamp": "2025-11-07T22:04:47.521Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 31,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "http://127.0.0.1:8000/magazin_de_bijuterii/info/",
+        "timestamp": "2025-11-07T22:21:35.178Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.accesare",
+    "pk": 32,
+    "fields": {
+        "ip_client": "127.0.0.1",
+        "url": "/magazin_de_bijuterii/log/",
+        "timestamp": "2025-11-12T18:49:48.021Z"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.categorie",
+    "pk": 1,
+    "fields": {
+        "nume": "inel",
+        "descriere": "Ati cautat: Inel",
+        "culoare": "#cccccc",
+        "icon": "fa-ring"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.categorie",
+    "pk": 2,
+    "fields": {
+        "nume": "bratara",
+        "descriere": "Ati cautat: bratara",
+        "culoare": "#e6b800",
+        "icon": "fa-ring"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.categorie",
+    "pk": 3,
+    "fields": {
+        "nume": "colier",
+        "descriere": "Ati cautat: colier",
+        "culoare": "#cccccc",
+        "icon": "fa-necklace"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.categorie",
+    "pk": 4,
+    "fields": {
+        "nume": "cercei",
+        "descriere": "Ati  cautat: cercei",
+        "culoare": "#cccccc",
+        "icon": null
+    }
+},
+{
+    "model": "magazin_de_bijuterii.brand",
+    "pk": 1,
+    "fields": {
+        "nume": "PANDORA",
+        "tara_origine": "ITALIA",
+        "descriere": "Brand accesibil"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.brand",
+    "pk": 2,
+    "fields": {
+        "nume": "CARTIER",
+        "tara_origine": "FRANTA",
+        "descriere": "Brand de lux"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.brand",
+    "pk": 3,
+    "fields": {
+        "nume": "SWAROWSKI",
+        "tara_origine": "GERMANIA",
+        "descriere": "Brand de lux"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.brand",
+    "pk": 5,
+    "fields": {
+        "nume": "TIFFANY&CO",
+        "tara_origine": "FRANTA",
+        "descriere": "Brand de lux"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.brand",
+    "pk": 6,
+    "fields": {
+        "nume": "VAN CLEEF",
+        "tara_origine": "FRANTA",
+        "descriere": "Brand de lux"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.material",
+    "pk": 2,
+    "fields": {
+        "material": 2,
+        "descriere": "culoare: argintiu"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.material",
+    "pk": 3,
+    "fields": {
+        "material": 1,
+        "descriere": "culolare: auriu"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.material",
+    "pk": 4,
+    "fields": {
+        "material": 3,
+        "descriere": "culoare: argintiu"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.material",
+    "pk": 5,
+    "fields": {
+        "material": 4,
+        "descriere": "culoare: roz"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.dimensiune",
+    "pk": 1,
+    "fields": {
+        "marime": "50.0",
+        "greutate": "10.00"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.dimensiune",
+    "pk": 2,
+    "fields": {
+        "marime": "48.0",
+        "greutate": "20.00"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.dimensiune",
+    "pk": 3,
+    "fields": {
+        "marime": "46.0",
+        "greutate": "18.00"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.dimensiune",
+    "pk": 4,
+    "fields": {
+        "marime": "52.0",
+        "greutate": "21.00"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 1,
+    "fields": {
+        "nume": "Bratara Cartier Diamante",
+        "descriere": "bratara eleganta cu diamant",
+        "pret": "5000.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-28",
+        "categorie": 2,
+        "brand": 2,
+        "material": [
+            2
+        ],
+        "dimensiune": [
+            1
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 2,
+    "fields": {
+        "nume": "Bratara Clasica",
+        "descriere": "Bratara clasica",
+        "pret": "30000.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-28",
+        "categorie": 2,
+        "brand": 2,
+        "material": [
+            3
+        ],
+        "dimensiune": [
+            2
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 3,
+    "fields": {
+        "nume": "inel",
+        "descriere": "inel de logodna",
+        "pret": "2500.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-28",
+        "categorie": 1,
+        "brand": 3,
+        "material": [
+            4
+        ],
+        "dimensiune": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 4,
+    "fields": {
+        "nume": "inel",
+        "descriere": "inel de logodna cu diamant",
+        "pret": "4000.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-29",
+        "categorie": 1,
+        "brand": 3,
+        "material": [
+            4
+        ],
+        "dimensiune": [
+            1,
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 5,
+    "fields": {
+        "nume": "Bratara",
+        "descriere": "Bratara Van Cleef",
+        "pret": "150000.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-29",
+        "categorie": 2,
+        "brand": 6,
+        "material": [
+            3,
+            2
+        ],
+        "dimensiune": [
+            1
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 6,
+    "fields": {
+        "nume": "Bratara Van Cleef Roz",
+        "descriere": "culoare: roz,auriu",
+        "pret": "20000.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-29",
+        "categorie": 2,
+        "brand": 6,
+        "material": [
+            3
+        ],
+        "dimensiune": [
+            4
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 7,
+    "fields": {
+        "nume": "bratara pandora clasica",
+        "descriere": "bratara argint",
+        "pret": "300.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-29",
+        "categorie": 2,
+        "brand": 1,
+        "material": [
+            2
+        ],
+        "dimensiune": [
+            4
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 8,
+    "fields": {
+        "nume": "bratara pandora",
+        "descriere": "bratara model lat",
+        "pret": "300.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-29",
+        "categorie": 2,
+        "brand": 1,
+        "material": [
+            2
+        ],
+        "dimensiune": [
+            1
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 9,
+    "fields": {
+        "nume": "inel pandora",
+        "descriere": "culoare: rose gold",
+        "pret": "450.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-30",
+        "categorie": 1,
+        "brand": 1,
+        "material": [
+            5
+        ],
+        "dimensiune": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 10,
+    "fields": {
+        "nume": "inel tiffany&co",
+        "descriere": "culoare: auriu",
+        "pret": "300000.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-30",
+        "categorie": 1,
+        "brand": 5,
+        "material": [
+            3
+        ],
+        "dimensiune": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 11,
+    "fields": {
+        "nume": "colier Van Cleef",
+        "descriere": "culoare: negru, auriu",
+        "pret": "200000.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-10-30",
+        "categorie": 3,
+        "brand": 6,
+        "material": [
+            3
+        ],
+        "dimensiune": [
+            4
+        ]
+    }
+},
+{
+    "model": "magazin_de_bijuterii.produs",
+    "pk": 12,
+    "fields": {
+        "nume": "inel logodna",
+        "descriere": "mmmm",
+        "pret": "200000.00",
+        "disponibilitate": true,
+        "data_adaugarii": "2025-11-06",
+        "categorie": 1,
+        "brand": 3,
+        "material": [],
+        "dimensiune": []
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 1,
+    "fields": {
+        "produs": 1,
+        "url_imagine": "https://www.arjewels.ro/wp-content/uploads/2019/07/AR2500-bratara-aur-ARJEWELS-min.png",
+        "descriere": ""
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 2,
+    "fields": {
+        "produs": 2,
+        "url_imagine": "https://love-brands.ro/205-large_default/bratara-cartier-love-auriu-cu-cristale.jpg",
+        "descriere": "bratara cartier"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 3,
+    "fields": {
+        "produs": 2,
+        "url_imagine": "https://luxurya.ro/204-thickbox_default/bratara-cartier-love-diamonds-gold.jpg",
+        "descriere": ""
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 4,
+    "fields": {
+        "produs": 3,
+        "url_imagine": "https://www.royal-diamonds.eu/application/assets/catalog/360/PD115/W/470/main.jpg",
+        "descriere": "poza inel"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 5,
+    "fields": {
+        "produs": 4,
+        "url_imagine": "https://castelo.ro/cdn/shop/files/IM17020010copy_144edf70-c0e2-4a55-a6e8-3175c4afe854.jpg?v=1733067358",
+        "descriere": "inel de logodna"
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 6,
+    "fields": {
+        "produs": 5,
+        "url_imagine": "https://valuxy.ro/cdn/shop/files/7b3a0f16f5d1c6778a5d5002a5abc445_800x.jpg?v=1755075383",
+        "descriere": ""
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 7,
+    "fields": {
+        "produs": 6,
+        "url_imagine": "https://valuxy.ro/cdn/shop/files/f11a398ad2870c1058f5afca13b7fe91_1120x.jpg?v=1755075405",
+        "descriere": ""
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 8,
+    "fields": {
+        "produs": 5,
+        "url_imagine": "https://cdn.shopify.com/s/files/1/0342/5311/1432/files/a0128c5e-4265-4d7f-82f4-81009173f1e6_300x.png?v=1760019575",
+        "descriere": ""
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 9,
+    "fields": {
+        "produs": 7,
+        "url_imagine": "https://sabrini.ro/image/catalog/silviu/590702HV/590702HV_1.jpg",
+        "descriere": ""
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 10,
+    "fields": {
+        "produs": 8,
+        "url_imagine": "https://sabrini.ro/image/catalog/silviu/597712/597712_1.jpg",
+        "descriere": ""
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 11,
+    "fields": {
+        "produs": 9,
+        "url_imagine": "https://sabrini.ro/image/catalog/silviu/188862C01/188862C01_1.jpg",
+        "descriere": ""
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 12,
+    "fields": {
+        "produs": 10,
+        "url_imagine": "https://love-brands.ro/1021-large_default/inel-tiffany-co-auriu.jpg",
+        "descriere": ""
+    }
+},
+{
+    "model": "magazin_de_bijuterii.imagine",
+    "pk": 13,
+    "fields": {
+        "produs": 11,
+        "url_imagine": "https://valuxy.ro/cdn/shop/files/37e1e5fd6558752c5b9d548e0be5dc93_1120x.jpg?v=1719964237",
+        "descriere": ""
+    }
+}
+]

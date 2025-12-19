@@ -1,0 +1,4 @@
+Subiect: {subiect}
+Promoția este valabilă până la: {data_expirare}
+Reducere: {reducere_procent}%
+Cod cupon: {cod_cupon}

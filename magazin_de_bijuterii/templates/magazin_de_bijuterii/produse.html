@@ -14,7 +14,14 @@
 <form method="get" id="filtru-form">
     {{ form.as_p }}
     <button type="submit">Filtrează</button>
-    <a href="{% url 'produse' %}" class="btn-reset" onclick="return confirmReset()">Resetează filtre</a>
+    <a 
+        href="{% if categorie %}{% url 'produse_categorie' categorie.nume %}{% else %}{% url 'produse' %}{% endif %}" 
+        class="btn-reset" 
+        onclick="return confirmReset()"
+    >
+            Resetează filtre
+    </a>
+
 </form>
 
 {% if mesaj_paginare %}
@@ -36,7 +43,7 @@ function confirmReset() {
     <div class="grid-produse">
         {% for produs in page_obj %}
         <div class="produs">
-            <h3><a href="{% url 'produs_detaliu' produs.id %}">{{ produs.nume }}</a></h3>
+            <h3><a href="{% url 'detalii_produs' produs.id %}">{{ produs.nume }}</a></h3>
             <p>{{ produs.descriere|truncatewords:20 }}</p>
             <p><strong>Preț:</strong> {{ produs.pret }} RON</p>
             <p><strong>Categorie:</strong>
